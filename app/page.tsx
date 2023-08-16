@@ -1,15 +1,25 @@
 "use client";
-import { useSession } from "next-auth/react";
-import Input from "@/components/startGame";
-import RoomInput from "@/components/joinRoom";
+import styles from "./page.module.scss";
+import Header from "@/components/header/Header";
+import { useState, useEffect } from "react";
+import AvatarComponent from "./avatarComponent";
 
 export default function Home() {
-	// const session = useSession({ required: true });
 	return (
 		<>
-			{/* <h1>Hi, {session?.data?.user?.name}</h1> */}
-			<Input />
-			<RoomInput />
+			<Header />
+			<div className={styles.pageContainer}>
+				<div className={styles.tagLine}>
+					<h1>
+						Chill, Vibe <br />
+						and Jam
+						<br />
+						with your friends <br />
+						...
+					</h1>
+				</div>
+			</div>
+			<AvatarComponent />
 		</>
 	);
 }
