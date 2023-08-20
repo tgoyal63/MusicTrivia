@@ -14,6 +14,7 @@ import raccon from "../assets/avatars/raccon.png";
 
 import Image from "next/image";
 import styles from "./avatarComponent.module.scss";
+import shuffleLogo from "../assets/shuffleIcon.svg";
 import { useState, useEffect } from "react";
 
 export const avatars = [elephant, bear, cat, chicken, dog, lion, monkey, panda, otter, rabbit, tiger, pig, raccon];
@@ -25,9 +26,11 @@ export default function AvatarComponent() {
 		<>
 			<div className={styles?.avatarContainer}>
 				<Image src={avatar} alt="Avatar" width={"250"} />
-			</div>
-			<div className={styles?.shuffleButton}>
-				<button onClick={() => setAvatar(avatars[Math.floor(Math.random() * avatars.length)])}>Shuffle</button>
+				<div className={styles?.shuffleButton}>
+					<button onClick={() => setAvatar(avatars[Math.floor(Math.random() * avatars.length)])}>
+						<Image src={shuffleLogo} alt="shuffle" />
+					</button>
+				</div>
 			</div>
 		</>
 	);
